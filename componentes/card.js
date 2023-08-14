@@ -4,11 +4,14 @@ class productCard extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
   static get observedAttributes(){
-    return ["img", "title", "precio", "coleccion", "contenido"];
+    return ["img", "movil", "title", "precio", "coleccion", "contenido"];
   }
   attributeChangedCallback(attr, odlval, newVal){
     if(attr==="img"){
         this.img = newVal;
+    }
+    if(attr==="movil"){
+        this.movil = newVal;
     }
     if(attr==="title"){
         this.title = newVal;
@@ -29,6 +32,7 @@ class productCard extends HTMLElement {
             <main class="container">
                 <section class="imgBox">
                     <img src="${this.img}" />
+                    <img class="movil" src="${this.movil}" />
                 </section>
                 <section class="details">
                     <div class="content">
@@ -47,47 +51,50 @@ class productCard extends HTMLElement {
     return `
         <style>
         :host {
-        --primary-background: #5a6cb2;
+        --primary-background: #171717;
           width: 80%;
           max-width: 900px;
           min-width: 280px;
           margin: 0 auto;
-      }
-      .container {
-          position: relative;
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-between;
-          width: 900px;
-          height: 600px;
-          margin: 20px;
-          background-color: #fff;
-      }
-      .container .imgBox {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          width: 50%;
-          height: 100%;
-          background-color: var(--primary-background)
+        }
+        .container {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 900px;
+            height: 600px;
+            margin: 20px;
+            background-color: transparent;
+            border-radius: 10px
+        }
+        .container .imgBox {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            width: 50%;
+            height: 100%;
+            background-color: var(--primary-background);
+            border-radius: 10px 0 0 10px;
       }
       .container .imgBox:before {
           position: absolute;
           top: 20px;
           left: 20px;
-          font-size: 8em;
+          font-size: 6em;
+          letter-spacing: 5px;
           font-weight: 800;
-          color: #000;
-          content: 'Nike';
+          color: #fff;
+          content: 'Free Fire';
           opacity: 0.1;
+          font-family: free-fire;
       }
       .container .imgBox img {
           position: relative;
-          top: 100px;
-          left: -50px;
+          top: 120px;
+          left: -40px;
           width: 720px;
           height: 480px;
-          transform: rotate(-30deg);
       }
       .container .details {
           display: flex;
@@ -97,6 +104,8 @@ class productCard extends HTMLElement {
           height: 100%;
           box-sizing: border-box;
           padding: 40px;
+          background-color: #fff;
+          border-radius: 0 10px 10px 0;
 
       }
       .container .details h2 {
@@ -135,6 +144,9 @@ class productCard extends HTMLElement {
           border-radius: 40px;
           background-color: #5a6cb2;
           cursor: pointer;
+      }
+      .movil{
+        display:none;
       }
       @media (max-width: 1080px) {
           .container {
