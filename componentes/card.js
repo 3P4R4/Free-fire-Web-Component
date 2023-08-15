@@ -38,8 +38,6 @@ class productCard extends HTMLElement {
                     <div class="content">
                         <h2>${this.title}<br><span>${this.coleccion}</span></h2>
                         <p>${this.contenido}</p>
-                        <h3>${this.precio} COL$</h3>
-                        <button>¡Comprar Ahora!</button>
                     </div>
                 </section>
             </main>
@@ -80,12 +78,12 @@ class productCard extends HTMLElement {
       .container .imgBox:before {
           position: absolute;
           top: 20px;
-          left: 20px;
-          font-size: 6em;
-          letter-spacing: 5px;
+          left: 150px;
+          font-size: 8em;
+          letter-spacing: 15px;
           font-weight: 800;
           color: #fff;
-          content: 'Free Fire';
+          content: 'Free';
           opacity: 0.1;
           font-family: free-fire;
       }
@@ -108,6 +106,18 @@ class productCard extends HTMLElement {
           border-radius: 0 10px 10px 0;
 
       }
+      .container .details:before {
+        position: absolute;
+          top: 20px;
+          right: 170px;
+          font-size: 8em;
+          letter-spacing: 15px;
+          font-weight: 800;
+          color: #000;
+          content: 'Fire';
+          opacity: 0.1;
+          font-family: free-fire;
+      }
       .container .details h2 {
           margin-bottom: 25px;
           font-size: 2.5em;
@@ -121,8 +131,7 @@ class productCard extends HTMLElement {
           color: #999;
       }
       .container .details p {
-          max-width: 85%;
-          margin-left: 15%;
+          max-width: 100%;
           margin-bottom: 35px;
           color: #333;
           font-size: 15px;
