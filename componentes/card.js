@@ -33,11 +33,13 @@ class productCard extends HTMLElement {
                 <section class="imgBox">
                     <img src="${this.img}" />
                     <img class="movil" src="${this.movil}" />
+                    <img class="fCard" src="./img/fCard.png">
                 </section>
                 <section class="details">
                     <div class="content">
                         <h2>${this.title}<br><span>${this.coleccion}</span></h2>
                         <p>${this.contenido}</p>
+                        <img class="fCard2" src="./img/fCard.png">
                     </div>
                 </section>
             </main>
@@ -64,7 +66,8 @@ class productCard extends HTMLElement {
             height: 600px;
             margin: 20px;
             background-color: transparent;
-            border-radius: 10px
+            border-radius: 10px;
+            overflow: hidden;
         }
         .container .imgBox {
             position: relative;
@@ -119,22 +122,25 @@ class productCard extends HTMLElement {
           font-family: free-fire;
       }
       .container .details h2 {
-          margin-bottom: 25px;
+          margin-bottom: 20px;
           font-size: 2.5em;
           line-height: 0.8em;
           color: #444;
+          font-family: free-fire;
       }
       .container .details h2 span {
-          font-size: 0.4em;
+          font-size: 0.5em;
           text-transform: uppercase;
           letter-spacing: 2px;
           color: #999;
+          font-family: Arial, Helvetica, sans-serif;
+          font-weight:bold
       }
       .container .details p {
           max-width: 100%;
           margin-bottom: 35px;
           color: #333;
-          font-size: 15px;
+          font-size: 18px;
       }
       .container .details h3 {
           float: left;
@@ -154,6 +160,22 @@ class productCard extends HTMLElement {
           background-color: #5a6cb2;
           cursor: pointer;
       }
+      .container img.fCard {
+        width: 180px;
+    height: fit-content;
+    position: absolute;
+    top: 35px;
+    left: -50px;
+      }
+      .container img.fCard2 {
+        width: 320px;
+        height: fit-content;
+        position: absolute;
+        bottom: -62px;
+        right: -77px;
+        opacity: 0.1;
+        0px: ;
+    }
       .movil{
         display:none;
       }
