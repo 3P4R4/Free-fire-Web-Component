@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/3P4R4/Web-Component-Ecommerce/issues"
   },
-  "homepage": "https://github.com/3P4R4/Web-Component-Ecommerce#readme"
+  "homepage": "https://github.com/3P4R4/Web-Component-Ecommerce#readme",
+  "dependencies": {
+    "vanilla-tilt": "^1.8.1"
+  }
 }

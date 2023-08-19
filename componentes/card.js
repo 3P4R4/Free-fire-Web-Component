@@ -29,19 +29,21 @@ class productCard extends HTMLElement {
   getTemplate() {
     const template = document.createElement("template");
     template.innerHTML = `
-            <main class="container">
-                <section class="imgBox">
-                    <img src="${this.img}" />
-                    <img class="movil" src="${this.movil}" />
-                    <img class="fCard" src="./img/fCard.png">
-                </section>
-                <section class="details">
-                    <div class="content">
-                        <h2>${this.title}<br><span>${this.coleccion}</span></h2>
-                        <p>${this.contenido}</p>
-                        <img class="fCard2" src="./img/fCard.png">
-                    </div>
-                </section>
+            <main class="rgb">
+                <div class="container">
+                    <section class="imgBox">
+                        <img class="pc" src="${this.img}"/>
+                        <img class="movil" src="${this.movil}" />
+                        <img class="fCard" src="./img/fCard.png">
+                    </section>
+                    <section class="details">
+                        <div class="content">
+                            <h2>${this.title}<br><span>${this.coleccion}</span></h2>
+                            <p>${this.contenido}</p>
+                            <img class="fCard2" src="./img/fCard.png">
+                        </div>
+                    </section>
+                </div>
             </main>
             ${this.getStyles()};
         `;
@@ -68,6 +70,8 @@ class productCard extends HTMLElement {
             background-color: transparent;
             border-radius: 10px;
             overflow: hidden;
+            transform-style: preserve-3d;
+    perspective: 1000px;
         }
         .container .imgBox {
             position: relative;
@@ -90,12 +94,13 @@ class productCard extends HTMLElement {
           opacity: 0.1;
           font-family: free-fire;
       }
-      .container .imgBox img {
+      .container .imgBox img.pc {
           position: relative;
           top: 120px;
           left: -40px;
           width: 720px;
           height: 480px;
+          transform: translateZ(20px);
       }
       .container .details {
           display: flex;
@@ -141,6 +146,7 @@ class productCard extends HTMLElement {
           margin-bottom: 35px;
           color: #333;
           font-size: 18px;
+          transform: translateZ(30px);
       }
       .container .details h3 {
           float: left;
@@ -176,6 +182,37 @@ class productCard extends HTMLElement {
         opacity: 0.1;
         0px: ;
     }
+    .rgb::after {
+        content:"";
+        background: linear-gradient(45deg,
+        #ff0000 0%, 
+        #ff9a00 10%,
+        #d0de21 20%,
+        #4fdc4a 30%, 
+        #3fdad8 40%,
+        #2fc9e2 50%, 
+        #1c7fee 60%, 
+        #5f15f2 70%, 
+        #ba0cf8 80%, 
+        #fb07d9 90%, 
+        #ff0000 100%  )
+        repeat 0% 0% / 300% 100%;
+        position: absolute;
+        inset: -3px;
+        border-radius: 10px;
+        filter: blur(8px);
+        z-index: -1;
+        animation: rgb 6s linear infinite;
+        width: 905px;
+    height: 600px;
+    top: 3%;
+    left: 2%;
+      }
+      @keyframes rgb {
+        0% {background-position: 0% 50%;}
+        50% {background-position: 100% 50%;}
+        100% {background-position: 0% 50%;}
+      }
       .movil{
         display:none;
       }
@@ -190,6 +227,8 @@ class productCard extends HTMLElement {
               box-sizing: border-box;
               height: auto;
               text-align: center;
+              border-radius: 10px 10px 0 0;
+              background: linear-gradient(#000 0%, #000000c9 70%, #1d1d1d 100%);
           }
           .container .imgBox img {
               left: initial;
@@ -208,6 +247,27 @@ class productCard extends HTMLElement {
               max-width: 100%;
               margin-left: 0;
           }
+          .container .imgBox img.pc, .container .imgBox:before, .container .details:before, .fCard {
+            display:none
+        }
+        .movil{
+            display:block;
+            margin-bottom:-25%
+          }
+          .rgb::after {
+            width: 505px;
+            height: 702px;
+            top: 2%;
+            left: 4%;
+          }
+          .container .imgBox{
+            padding: 10px 10px 0px
+          }
+          .container .details {
+            padding: 70px 20px 0;
+            border-radius: 0 0 10px 10px;
+
+        }
       }
       </style>
         `;
