@@ -20,6 +20,10 @@
   .container .imgBox:before{
     font-family: free-fire;
   }
- 
+ .pc{
+  height: 30%;
+ }
 
-  
+ mlz-ff{
+  --img-pc: 80%
+ }
