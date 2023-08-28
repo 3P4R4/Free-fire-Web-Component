@@ -4,7 +4,7 @@ class FreeFireCard extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
   static get observedAttributes() {
-    return ["img", "movil", "titulo", "precio", "coleccion", "contenido", "alturaImg"];
+    return ["rgb", "img", "movil", "titulo", "precio", "coleccion", "contenido", "alturaImg"];
   }
   attributeChangedCallback(attr, oldVal, newVal) {
     if (attr === "img") {
@@ -20,6 +20,9 @@ class FreeFireCard extends HTMLElement {
       if (movilImage) {
         movilImage.src = this.movil;
       }
+    }
+    if(attr=== "rgb"){
+      this.rgb = newVal
     }
     if (attr === "titulo") {
       this.title = newVal;
@@ -45,7 +48,7 @@ class FreeFireCard extends HTMLElement {
   getTemplate() {
     const template = document.createElement("template");
     template.innerHTML = `
-    <main class="rgb">
+    <main class="${this.rgb}">
     <div class="container">
     <section class="imgBox">
     <img class="pc" src="${this.img}" style="height:${this.alturaImg}"/>
@@ -75,13 +78,16 @@ class FreeFireCard extends HTMLElement {
       --primary-background: #171717;
       --width: 500px;
       --height: 300px;
-      --img-pc: 85%;
-      --img-movil: 100%;
-      --margin-movil: -25%;
-      --rgb-movil-top: 17%;
+      --btn-padding: 7px 13px;
       --btn-color: #fff;
       --btn-font-size: 12px;
-      --btn-padding: 7px 13px
+      /* PC */
+      --img-pc: 85%;
+      --img-pc-top:65px;
+      /* Movil */
+      --img-movil: 100%;
+      --margin-movil: -25%;
+      --rgb-movil-top: 19%;
         }
         .container {
             position: relative;
@@ -119,7 +125,7 @@ class FreeFireCard extends HTMLElement {
           }
       .container .imgBox img.pc {
           position: relative;
-          top: 45px;
+          top: var(--img-pc-top);
           left: -20px;
           width: auto;
           height: var(--img-pc);
