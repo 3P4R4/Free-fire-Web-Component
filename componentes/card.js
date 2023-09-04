@@ -87,7 +87,7 @@ class FreeFireCard extends HTMLElement {
       /* Movil */
       --img-movil: 100%;
       --margin-movil: -25%;
-      --rgb-movil-top: 19%;
+      --rgb-movil-top: 0%;
         }
         .container {
             position: relative;
@@ -231,7 +231,7 @@ class FreeFireCard extends HTMLElement {
         width: var(--width);
         height: var(--height);
           margin:0 auto;
-          top:33%
+          top:1%
     
       }
       @keyframes rgb {
@@ -247,6 +247,7 @@ class FreeFireCard extends HTMLElement {
               height: 550px;
               width: 350px;
           }
+          
           .container .imgBox {
               width: 100%;
               box-sizing: border-box;

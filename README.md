@@ -1,18 +1,18 @@
-# web-component-ecommerce
+# web-component-ff
 
-Web Component para tarjetas estilizadas de ecommerce.
+Web Component de uso multiporposito alusivo a Free Fire
 
 ## Instalación
 
 ```bash
-npm install web-component-ecommerce
+npm install web-component-ff --save
 ```
 
 ## Uso
 Importa el custom element:
 
 ```js
-import "web-component-ecommerce";
+import {FreeFireCard} from 'web-component-ff';
 ```
 
 ## Usa el tag ```<mlz-ff>```:
@@ -29,16 +29,20 @@ import "web-component-ecommerce";
 + titulo - Titulo de la tarjeta
 + img - Imagen destacada
 + movil - Imagen para vista movil
-+ rgb - Activa efecto de gradiente
++ rgb - Activa efecto de gradiente (opcional)
 + coleccion - Colección del item
 + contenido - Descripción corta
 + alturaImg - Altura de la imagen
 
+## Atributos efecto Tilt
+**Para los atributos del efecto tilt puedes buscar mas en** [https://gijsroge.github.io/tilt.js/](https://gijsroge.github.io/tilt.js/)
+
 ## Descripción
-Web component desarrollado con Vanilla JS para crear tarjetas de productos estilizadas, como las de ecommerce. Permite mostrar una imagen destacada, info del producto y efectos al hover.
+Web component desarrollado con Vanilla JS para crear una tarjeta multiproposito alusivo a Free Fire. Permite mostrar una imagen destacada, titulo, sub-titulo, info del producto, botón de ver más y efectos hover, marca de agua de fondo; incluso puedes variar en la imagen principal en modo pc y modo movil.
 
 ## Características
-+ Diseño responsive para desktop y mobile
++ Diseño responsive para desktop y movil
++ cambiar de imagen principal para desktop y movil
 + Efecto hover con VanillaTilt.js
 + Soporte para Web Components nativos
 + Fácil personalización cambiando los atributos
@@ -55,6 +59,11 @@ Desarrollado con:
 + Custom Elements
 
 ## Para contribuir:
+
+Crea un fork y contribuye
+
+[https://github.com/mendozalz/Free-fire-Web-Component](https://github.com/mendozalz/Free-fire-Web-Component)
+
 
 1.- Clonar repositorio 
 

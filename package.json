@@ -1,5 +1,5 @@
 {
-  "name": "web-component-ecommerce",
+  "name": "web-component-ff",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/3P4R4/Web-Component-Ecommerce.git"
+    "url": "git+https://github.com/3P4R4/Web-Component-ff.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/3P4R4/Web-Component-Ecommerce/issues"
+    "url": "https://github.com/3P4R4/Web-Component-ff/issues"
   },
-  "homepage": "https://github.com/3P4R4/Web-Component-Ecommerce#readme",
+  "homepage": "https://github.com/3P4R4/Web-Component-ff#readme",
   "dependencies": {
     "vanilla-tilt": "^1.8.1"
   }
