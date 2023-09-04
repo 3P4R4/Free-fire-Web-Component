@@ -1,7 +1,7 @@
 {
   "name": "web-component-ff",
   "version": "1.0.0",
-  "description": "",
+  "description": "Web component desarrollado con Vanilla JS para crear una tarjeta multiproposito alusivo a Free Fire. Permite mostrar una imagen destacada, titulo, sub-titulo, info del producto, botón de ver más y efectos hover, marca de agua de fondo; incluso puedes variar en la imagen principal en modo pc y modo movil.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -4,7 +4,7 @@ class FreeFireCard extends HTMLElement {
     this.attachShadow({ mode: "open" });
   }
   static get observedAttributes() {
-    return ["rgb", "img", "movil", "titulo", "precio", "coleccion", "contenido", "alturaImg"];
+    return ["rgb", "img", "movil", "titulo", "precio", "coleccion", "contenido", "alturaImg", "href"];
   }
   attributeChangedCallback(attr, oldVal, newVal) {
     if (attr === "img") {
@@ -43,6 +43,9 @@ class FreeFireCard extends HTMLElement {
     if (attr === "alturaImg") {
       this.alturaImg = newVal + 'px'; 
     }
+    if (attr === "href") {
+      this.href = newVal;
+    }
   }
   
   getTemplate() {
@@ -61,7 +64,7 @@ class FreeFireCard extends HTMLElement {
     }</span></h2>
     <p>${this.contenido.substring(0, 100) + "..."}</p>
     <img class="fCard2" src="./img/fCard.png">
-    <button>Ver mas</button>
+    <button href="www.google.com">Ver mas</button>
     </div>
     </section>
     </div>
