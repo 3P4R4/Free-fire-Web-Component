@@ -3,9 +3,11 @@ class FreeFireCard extends HTMLElement {
     super();
     this.attachShadow({ mode: "open" });
   }
+
   static get observedAttributes() {
-    return ["rgb", "img", "movil", "titulo", "precio", "coleccion", "contenido", "alturaImg", "href"];
+    return ["rgb", "img", "movil", "titulo", "precio", "coleccion", "contenido", "alturaimg", "href"];
   }
+
   attributeChangedCallback(attr, oldVal, newVal) {
     if (attr === "img") {
       this.img = newVal;
@@ -21,8 +23,8 @@ class FreeFireCard extends HTMLElement {
         movilImage.src = this.movil;
       }
     }
-    if(attr=== "rgb"){
-      this.rgb = newVal
+    if (attr === "rgb") {
+      this.rgb = newVal;
     }
     if (attr === "titulo") {
       this.title = newVal;
@@ -40,11 +42,19 @@ class FreeFireCard extends HTMLElement {
     if (attr === "contenido") {
       this.contenido = newVal;
     }
-    if (attr === "alturaImg") {
+    if (attr === "alturaimg") {
       this.alturaImg = newVal + 'px'; 
+      const pcImage = this.shadowRoot.querySelector(".pc");
+      if (pcImage) {
+        pcImage.style.height = this.alturaImg;
+      }
     }
     if (attr === "href") {
       this.href = newVal;
+      const vinculo = this.shadowRoot.querySelector("#btn");
+      if (vinculo) {
+        vinculo.href = this.href;
+      }
     }
   }
   
@@ -64,7 +74,7 @@ class FreeFireCard extends HTMLElement {
     }</span></h2>
     <p>${this.contenido.substring(0, 100) + "..."}</p>
     <img class="fCard2" src="./img/fCard.png">
-    <button href="www.google.com">Ver mas</button>
+    <div class="container-btn"><a  id="link"  href="${this.href}" style="text-decoration: none;"><button id="btn"><slot name="text-link"> Ver mas</slot></button></a></div>
     </div>
     </section>
     </div>
@@ -181,7 +191,10 @@ class FreeFireCard extends HTMLElement {
           transform: translateZ(30px);
           margin-bottom:15px
       }
-      .container .details button {
+      .container-btn{
+        position: relative
+      }
+      .container .details a button {
           float: right;
           padding: var(--btn-padding);
           font-size: var(--btn-font-size);
@@ -192,7 +205,7 @@ class FreeFireCard extends HTMLElement {
           border-radius: 15px;
           background-color: gray;
           cursor: pointer;
-          border: none
+          border: none;
       }
       .container img.fCard {
         width: 180px;
@@ -208,7 +221,6 @@ class FreeFireCard extends HTMLElement {
         bottom: -62px;
         right: -77px;
         opacity: 0.1;
-        0px: ;
     }
     .rgb::after {
         content:"";
@@ -298,6 +310,15 @@ class FreeFireCard extends HTMLElement {
         height: 550px;
           margin:0 auto;
           }
+          .container img.fCard2 {
+            width: 239px;
+            height: fit-content;
+            position: absolute;
+            bottom: -44px;
+            right: 182px;
+            opacity: 0.1;
+            transform: rotate(61deg);
+        } 
       }
       </style>
         `;
@@ -308,6 +329,14 @@ class FreeFireCard extends HTMLElement {
   }
   connectedCallback() {
     this.render();
+     // Obtener referencia al botón y al enlace
+  const btn = this.shadowRoot.querySelector("#btn");
+  const link = this.shadowRoot.querySelector(".link");
+
+  // Configurar el enlace del botón
+  btn.addEventListener("click", () => {
+    window.location.href = btn.href;
+  });
   }
 }
 customElements.define("mlz-ff", FreeFireCard);

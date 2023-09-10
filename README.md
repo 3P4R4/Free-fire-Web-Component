@@ -34,6 +34,9 @@ import {FreeFireCard} from 'web-component-ff';
 + contenido - Descripción corta
 + alturaImg - Altura de la imagen
 
+## Consideración de no usar el efecto titl
+Se debe eliminar en el componente el atributo "rbg" el cual se descuadra 
+
 ## Atributos efecto Tilt
 **Para los atributos del efecto tilt puedes buscar mas en** [https://gijsroge.github.io/tilt.js/](https://gijsroge.github.io/tilt.js/)
 
