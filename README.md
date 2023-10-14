@@ -2,6 +2,12 @@
 
 Web Component de uso multiporposito alusivo a Free Fire
 
+<p align="center">
+  <img src="https://i.ibb.co/DVdq6ck/Free-Fire-Card.gif" alt="Lección #7" />
+</p>
+
+Ver en [netlify](https://mlz-freefire.netlify.app/)
+
 ## Instalación
 
 ```bash
